@@ -1,4 +1,4 @@
-package com.cybertools.collageCBDD;
+package com.cybertools.collegeCBDD;
 
 //@author jpjar
 

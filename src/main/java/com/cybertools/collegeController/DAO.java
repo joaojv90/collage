@@ -1,4 +1,4 @@
-package com.cybertools.callageController;
+package com.cybertools.collegeController;
 
 //@author jpjar
 

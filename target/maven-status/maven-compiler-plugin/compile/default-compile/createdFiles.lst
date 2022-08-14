@@ -1,6 +1,9 @@
-com\cybertools\callageController\ControllerStudents.class
-com\cybertools\collageCBDD\Test.class
-com\cybertools\collageModel\ModelStudents.class
-com\cybertools\callageController\DAO.class
-com\cybertools\collageCBDD\CBDD.class
-com\cybertools\callageServlet\ServletStudents.class
+com\cybertools\collegeController\ControllerTeachers.class
+com\cybertools\collegeServlet\ServletTeachers.class
+com\cybertools\collegeController\ControllerStudents.class
+com\cybertools\collegeCBDD\Test.class
+com\cybertools\collegeCBDD\CBDD.class
+com\cybertools\collegeController\DAO.class
+com\cybertools\collegeModel\ModelStudents.class
+com\cybertools\collegeServlet\ServletStudents.class
+com\cybertools\collegeModel\ModelTeachers.class

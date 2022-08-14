@@ -1,9 +1,9 @@
-package com.cybertools.callageServlet;
+package com.cybertools.collegeServlet;
 
 //@author jpjar
 
-import com.cybertools.callageController.*;
-import com.cybertools.collageModel.ModelStudents;
+import com.cybertools.collegeController.*;
+import com.cybertools.collegeModel.ModelStudents;
 import com.google.gson.*;
 import java.io.*;
 import java.util.List;
@@ -17,12 +17,7 @@ import javax.servlet.http.*;
 public class ServletStudents extends HttpServlet{
     
     private static final Gson objGson = new GsonBuilder().serializeNulls().create();
-    private static DAO<ModelStudents> dao = new ControllerStudents();;
-    
-    /*public void ServletStudents (){
-        //objGson = new GsonBuilder().serializeNulls().create();
-        dao = new ControllerStudents();
-    }*/
+    private static final DAO<ModelStudents> dao = new ControllerStudents();
     
     //Obtiene datos del servidor
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
