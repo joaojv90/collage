@@ -33,20 +33,20 @@
                     <br>
                     <br>
                     <br>
-                    <h1>¿Quiénes Somos?</h1>
+                    <center>
+                    <h1 id="title">Introducción</h1>
+                    </center>
+                    <br>
                     <p align="justify">
-                        <b>ORIONSOFT</b> está formado por un equipo humano de jóvenes profesionales con el objetivo de 
-                        entregar al mercado, una completa solución, que comprende ingeniería, diseño y desarrollo 
-                        de proyectos informáticos, logos profesionales, aplicaciones web, de escritorio y móviles.
-                        <br>
-                        Sabemos que la tecnología de la información, es una herramienta imprescindible para que 
-                        las empresas e instituciones crezcan y produzcan eficientemente su desarrollo profesional. Por esto, 
-                        en <b>ORIONSOFT</b> estamos comprometidos con proveer un ambiente de trabajo seguro y colaborativo, así como 
-                        también en la calidad de los servicios informáticos que ofrecemos, adaptándonos constantemente a 
-                        las necesidades del mercado nacional e internacional.
-                        <br>
-                        Visita nuestra sección de <a href="./Services.html"><i>servicios</i></a> para saber más.
-                    </p>
+                            <b>
+                                La aplicación “College” es un sistema de registro y control de estudiantes, profesores,
+                                información de las asignaturas y carreras además de datos del ámbito educativo, a 
+                                través de una aplicación web. En la aplicación se podrá visualizar la información, 
+                                realizar el registro, actualización así como eliminar tanto a estudiantes como de 
+                                docentes. Todo esto conectado a una base de datos con procedimientos de almacenamientos, 
+                                funciones, triggers y también el control de usuarios y roles.
+                            </b> 
+                        </p>
                 </div> 
                 <div>
                     <br>
@@ -60,14 +60,14 @@
                             <table>
                                 <tr>
                                     <td>
-                                        <h1 style="color: white">Objetivo General</h1>
-                                        <p align="justify" style="color: white">
-                                            • Desarrollar una aplicación WEB con el conocimiento adquirido de 
-                                            programación y base de datos usando NETBEANS y MYSQL, tanto en la 
-                                            parte de personalización del programa y el desarrollo de código con 
-                                            el lenguaje de JAVA, mediante un enfoque teórico/practico, además 
-                                            de utilizar lenguajes como HTML, JS y CSS para poder 
-                                            realizar la vista del proyecto
+                                        <h1 id="title">Objetivo General</h1>
+                                        <p align="justify" style="color: #141c27"><b>
+                                                • Desarrollar una aplicación WEB con el conocimiento adquirido de 
+                                                programación y base de datos usando NETBEANS y MYSQL, tanto en la 
+                                                parte de personalización del programa y el desarrollo de código con 
+                                                el lenguaje de JAVA, mediante un enfoque teórico/practico, además 
+                                                de utilizar lenguajes como HTML, JS y CSS para poder 
+                                                realizar la vista del proyecto</b>
                                         </p>
                                     </td>                                 
                                 </tr>
@@ -77,14 +77,16 @@
                             <table>
                                 <tr>
                                     <td>
-                                        <h1 style="color: white">Obejtivos Específicos</h1>
-                                        <p align="justify" style="color: white">
+                                        <h1 id="title">Obejtivos Específicos</h1>
+                                        <p align="justify" style="color: #141c27"><b>
                                             • Describir las características y funciones que nos 
                                             brindan los programas usados en la práctica.<br>
                                             • Conocer y explicar la ejecución del programa, su 
-                                            funcionamiento dentro de la web y su respectivo lenguaje de código usado en la programación
+                                            funcionamiento dentro de la web y su respectivo lenguaje 
+                                            de código usado en la programación
                                             <br>• Implementar una base datos, con los respectivos 
-                                            pasos explicados en clases, para una correcta organización del programa al guardar los datos.    
+                                            pasos explicados en clases, para una correcta organización 
+                                            del programa al guardar los datos.</b>   
                                         </p>
                                     </td>                                 
                                 </tr>

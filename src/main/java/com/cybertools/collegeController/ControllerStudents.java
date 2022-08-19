@@ -75,6 +75,8 @@ public class ControllerStudents implements DAO <ModelStudents>{
             String query = "DELETE FROM students WHERE nui=?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, t.getNui());
+            System.out.println(t);
+            System.out.println(ps.toString());
             return ps.executeUpdate() != 0;
         }catch (Exception ex) {
             ex.printStackTrace(System.out);

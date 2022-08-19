@@ -7,8 +7,8 @@ import com.cybertools.collegeModel.ModelStudents;
 import com.google.gson.*;
 import java.io.*;
 import java.util.List;
-import javax.servlet.annotation.*;
-import javax.servlet.http.*;
+import jakarta.servlet.annotation.*;
+import jakarta.servlet.http.*;
 
 
 @WebServlet(name = "StudentsServlet", urlPatterns = "/students")

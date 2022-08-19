@@ -1,5 +1,5 @@
 #intro{
-    background-image: url(../img/fondo.jpg);
+    background-image: url(../img/fondo.png);
     background-repeat:no-repeat;
     background-size: cover;
     background-position: center center;
@@ -7,8 +7,8 @@
     font-family: Roboto;
 }
 
-#students{
-    background-image: url(../img/fondo.jpg);
+#background{
+    background-image: url(../img/fondo.png);
     background-repeat:no-repeat;
     background-size: cover;
     background-position: center center;
@@ -20,13 +20,13 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #1a1a1a !important;
+    background-color: #141c27 !important;
     color: #fff        
 }
 
 #barraEncabezado{
     height: 55px;
-    background-color: #1a1a1a !important
+    background-color: #141c27 !important
 }
 
 .button {
@@ -65,4 +65,18 @@ footer {
     rgba(99, 88, 238, 1) 94.3%
   );
   transition: all 0.475s;
+}
+
+#title{
+    color: #141c27;
+}
+
+table {
+    border-color: #000 !important;
+    font-weight: 500 !important;
+}
+
+thead th{
+    font-size: 18px !important;
+    font-weight: 900 !important;
 }

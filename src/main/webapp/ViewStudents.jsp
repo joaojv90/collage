@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,7 +8,7 @@
         <link href="Styles/Styles.css" rel="stylesheet" type="text/css"/>
         <script src="js/Methods.js"></script>
     </head>
-    <body id="students">
+    <body id="background">
         <div>
             <nav class="navbar navbar-expand-sm bg-light" id="barraEncabezado">
                 <a class="navbar-brand" href="./Introduction.jsp">
@@ -30,7 +30,7 @@
                 <br>
                 <br>
                 <header>
-                    <h1 align="center" style="font-family: Roboto; color: white">
+                    <h1 align="center" style="font-family: Roboto; color: #141c27">
                         Control para Estudiantes</h1>
                 </header>
                 <br>
@@ -50,13 +50,14 @@
             <div class="container" align="center" style="font-family: Roboto">
                 <table
                     id="table"
-                    style="color: white"
+                    data-locale="es-ES"
+                    
                     data-url="/college/students"
                     data-toggle="table"
                     data-filter-control="true"
                     data-show-search-clear-button="true"
                     data-show-columns="true"
-                    class="table-dark">
+                    >
                     <thead>
                         <tr>
                             <th data-field="nui"><center>NUI</center></th>
@@ -73,7 +74,7 @@
             </div>
         </div>
         <footer>
-            <div style="background-color: #EBF5FB">
+            <div>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -88,5 +89,6 @@
                 </div>
             </div>
         </footer>
+        <%@include file="./libs/ModalsStudents.html"%>
     </body>
 </html>

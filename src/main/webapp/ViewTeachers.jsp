@@ -6,8 +6,9 @@
         <title>Profesores</title>
         <%@include file="./libs/Bootstrap.html"%>
         <link href="Styles/Styles.css" rel="stylesheet" type="text/css"/>
+        <script src="js/Methods.js"></script>
     </head>
-    <body>
+    <body id="background">
         <div>
             <nav class="navbar navbar-expand-sm bg-light" id="barraEncabezado">
                 <a class="navbar-brand" href="./Introduction.jsp">
@@ -24,8 +25,54 @@
                 </ul>
             </nav>
         </div>
+        <div>
+            <main>
+                <br>
+                <br>
+                <header>
+                    <h1 align="center" style="font-family: Roboto; color: #141c27">
+                        Control para Docentes</h1>
+                </header>
+                <br>
+                <br>
+                <center>
+                    <section>
+                        <button class="button"
+                                data-bs-toggle="modal" 
+                                data-bs-target="#insertStudents">
+                            <span class="button-content">Insertar nuevo
+                            Docente </span>
+                        </button>
+                    </section>
+                </center>
+            </main>
+            <br>
+            <div class="container" align="center" style="font-family: Roboto">
+                <table
+                    id="table"
+                    data-locale="es-ES"
+                    style="color: white"
+                    data-url="/college/teachers"
+                    data-toggle="table"
+                    data-filter-control="true"
+                    data-show-search-clear-button="true"
+                    data-show-columns="true"
+                    class="table-dark">
+                    <thead>
+                        <tr>
+                            <th data-field="nui"><center>NUI</center></th>
+                            <th data-field="firstName"><center>Nombre</center></th>
+                            <th data-field="lastName"><center>Apellido</center></th>
+                            <th data-field="mailAddress"><center>Correo</center></th>
+                            <th data-field="operate" data-formatter="operations" 
+                                data-width="222"><center>Acción</center></th>
+                        </tr>
+                    </thead>
+                </table>  
+            </div>
+        </div>
         <footer>
-            <div style="background-color: #EBF5FB">
+            <div>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -40,5 +87,6 @@
                 </div>
             </div>
         </footer>
+        
     </body>
 </html>
