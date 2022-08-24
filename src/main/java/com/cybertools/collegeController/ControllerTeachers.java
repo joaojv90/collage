@@ -39,7 +39,7 @@ public class ControllerTeachers implements DAO <ModelTeachers>{
             ps.setString(1, t.getNui());
             ps.setString(2, t.getFirstName());
             ps.setString(3, t.getLastName());
-            ps.setString(5, t.getMailAddress());
+            ps.setString(4, t.getMailAddress());
             return ps.executeUpdate() != 0; //si no se ejecuta
         }catch (Exception ex) {
             ex.printStackTrace(System.out);

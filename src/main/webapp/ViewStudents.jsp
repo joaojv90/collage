@@ -50,14 +50,12 @@
             <div class="container" align="center" style="font-family: Roboto">
                 <table
                     id="table"
-                    data-locale="es-ES"
-                    
+                    data-locale="es-ES"                    
                     data-url="/college/students"
                     data-toggle="table"
                     data-filter-control="true"
                     data-show-search-clear-button="true"
-                    data-show-columns="true"
-                    >
+                    data-show-columns="true">
                     <thead>
                         <tr>
                             <th data-field="nui"><center>NUI</center></th>

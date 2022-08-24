@@ -39,7 +39,7 @@
                     <section>
                         <button class="button"
                                 data-bs-toggle="modal" 
-                                data-bs-target="#insertStudents">
+                                data-bs-target="#insertTeachers">
                             <span class="button-content">Insertar nuevo
                             Docente </span>
                         </button>
@@ -51,13 +51,10 @@
                 <table
                     id="table"
                     data-locale="es-ES"
-                    style="color: white"
                     data-url="/college/teachers"
                     data-toggle="table"
                     data-filter-control="true"
-                    data-show-search-clear-button="true"
-                    data-show-columns="true"
-                    class="table-dark">
+                    data-show-columns="true">
                     <thead>
                         <tr>
                             <th data-field="nui"><center>NUI</center></th>
@@ -87,6 +84,6 @@
                 </div>
             </div>
         </footer>
-        
+        <%@include file="./libs/ModalsTeachers.html"%>
     </body>
 </html>

@@ -7,7 +7,7 @@
         <%@include file="./libs/Bootstrap.html"%>
         <link href="Styles/Styles.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body id="intro">
+    <body id="background">
         <div>
             <nav class="navbar navbar-expand-sm bg-light" id="barraEncabezado">
                 <a class="navbar-brand" href="#">

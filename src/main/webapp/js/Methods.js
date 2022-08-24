@@ -67,6 +67,20 @@ function doDelete(id) {
     document.getElementById('closeDelete').click();
 }
 
+function doDeleteT(id) {
+    fetch(`./teachers?nui=${id}`, {
+        method: "DELETE"
+    }).then((response) => {
+        if (response.ok) {
+            alert("Registro Eliminada");
+            $("#table").bootstrapTable("refresh");
+        } else {
+            alert("registro no eliminada");
+        }
+    });
+    document.getElementById('closeDelete').click();
+}
+
 function delButton(e) {
     idtoDel = e.parentElement.parentElement.querySelector("td").innerHTML;
 }
