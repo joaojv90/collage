@@ -71,3 +71,11 @@ thead th{
     font-size: 18px !important;
     font-weight: 900 !important;
 }
+
+.nav-item:hover {
+  background-color: #303446;
+}
+
+header > h1 {
+  font-weight: bold;
+}

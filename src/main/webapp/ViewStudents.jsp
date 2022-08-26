@@ -54,7 +54,6 @@
                     data-url="/college/students"
                     data-toggle="table"
                     data-filter-control="true"
-                    data-show-search-clear-button="true"
                     data-show-columns="true">
                     <thead>
                         <tr>
