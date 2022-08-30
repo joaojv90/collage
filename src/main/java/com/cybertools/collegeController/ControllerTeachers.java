@@ -72,7 +72,5 @@ public class ControllerTeachers implements DAO <ModelTeachers>{
             ex.printStackTrace(System.out);
         }   
         return false;}
-    
-    
 
 }
