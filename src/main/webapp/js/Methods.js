@@ -1,4 +1,5 @@
 var $table = $('#table');
+var $tableS = $('#tableS');
 let idtoDel = 0;
 
 function operations() {
@@ -21,6 +22,26 @@ function operations() {
     ];
 }
 
+function operationsSubjects() {
+    return [
+        `<button type='button'
+            class='btn btn-warning actionBtn' 
+            data-bs-toggle='modal' 
+            data-bs-target='#upDateS'
+            onclick="getUpdateDataS(this)">
+            Actualizar
+    </button>
+    <button 
+            type='button' 
+            class='btn btn-danger actionBtn'
+             data-bs-toggle="modal" 
+             data-bs-target="#deleteS"
+            onclick="delButton(this)">
+            Eliminar
+    </button>`
+    ];
+}
+
 function doPost(event, form) {
     fetch(form.action, {
         method: "POST",
@@ -29,12 +50,14 @@ function doPost(event, form) {
         if (response.ok) {
             alert("Ingreso exitoso");
             $("#table").bootstrapTable("refresh");
+            $("#tableS").bootstrapTable("refresh");
         } else {
             alert("No se realizó ningún ingreso");
         }
     });
     event.preventDefault();
     document.getElementById('closeInsert').click();
+    document.getElementById('closeInsertS').click();
 }
 
 function doPut(event, form) {
@@ -45,12 +68,14 @@ function doPut(event, form) {
         if (response.ok) {
             alert("Registro actualizado");
             $("#table").bootstrapTable("refresh");
+            $("#tableS").bootstrapTable("refresh");
         } else {
             alert("No se actualizó ninguna registro");
         }
     });
     event.preventDefault();
     document.getElementById('CloseUp').click();
+    document.getElementById('CloseUpS').click();
 }
 
 function doDelete(id) {
@@ -101,12 +126,12 @@ function doDeleteS(id) {
     }).then((response) => {
         if (response.ok) {
             alert("Registro Eliminada");
-            $("#table").bootstrapTable("refresh");
+            $("#tableS").bootstrapTable("refresh");
         } else {
             alert("registro no eliminada");
         }
     });
-    document.getElementById('closeDelete').click();
+    document.getElementById('closeDeleteS').click();
 }
 
 function delButton(e) {
@@ -117,6 +142,16 @@ const getUpdateData = (e) => {
   let updateData = e.parentElement.parentElement.getElementsByTagName("td");
   let uForm = document
     .getElementById("upDate")
+    .getElementsByClassName("form-control");
+  for (let i = 0; i < updateData.length - 1; i++) {
+    uForm[i].value = updateData[i].innerHTML;
+  }  
+}
+
+const getUpdateDataS = (e) => {
+  let updateData = e.parentElement.parentElement.getElementsByTagName("td");
+  let uForm = document
+    .getElementById("upDateS")
     .getElementsByClassName("form-control");
   for (let i = 0; i < updateData.length - 1; i++) {
     uForm[i].value = updateData[i].innerHTML;

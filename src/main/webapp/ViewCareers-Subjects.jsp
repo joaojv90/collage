@@ -43,6 +43,7 @@
                             data-url="/college/careers"
                             data-toggle="table"
                             data-filter-control="true"
+                            data-height = "500"
                             data-show-columns="true">
                             <thead>
                                 <tr>
@@ -79,17 +80,18 @@
                     <br>
                     <div class="container" align="center" style="font-family: Roboto">
                         <table
-                            id="table"
+                            id="tableS"
                             data-locale="es-ES"                    
                             data-url="/college/subjects"
                             data-toggle="table"
                             data-filter-control="true"
+                            data-height = "500"
                             data-show-columns="true">
                             <thead>
                                 <tr>
                                     <th data-field="idSubjects"><center>ID</center></th>
                             <th data-field="nameSubjects"><center>Asignatura</center></th>
-                            <th data-field="operate" data-formatter="operations" 
+                            <th data-field="operate" data-formatter="operationsSubjects" 
                                 data-width="222"><center>Acción</center></th>
                             </tr>
                             </thead>

@@ -12,7 +12,7 @@
                         data-bs-dismiss="modal" 
                         aria-label="Close"></button>      
             </div>      
-            <form id="insertForm" 
+            <form id="insertFormS" 
                   action="subjects"
                   onsubmit="doPost(event, this)" 
                   class="modal-body">
@@ -29,16 +29,16 @@
             </form>    
             <div class="modal-footer">        
                 <button type="button" class="btn btn-secondary" 
-                        data-bs-dismiss="modal" id="closeInsert">Cerrar</button>        
+                        data-bs-dismiss="modal" id="closeInsertS">Cerrar</button>        
                 <button type="submit" class="btn btn-primary"
-                        form="insertForm">Insertar</button>      
+                        form="insertFormS">Insertar</button>      
             </div>    
         </div>  
     </div>
 </div>
 <div
     class="modal fade"
-    id="delete"
+    id="deleteS"
     data-bs-backdrop="static"
     data-bs-keyboard="false"
     tabindex="-1"
@@ -55,13 +55,13 @@
                 <button type="button" class="btn btn-danger" id="deleteBtn" 
                         onclick="doDeleteS(idtoDel)">Si</button>
                 <button type="button" class="btn btn-secondary" 
-                        data-bs-dismiss="modal" id="closeDelete">No</button>
+                        data-bs-dismiss="modal" id="closeDeleteS">No</button>
             </div>
         </div>
     </div>
 </div>
 <div class="modal fade" 
-     id="upDate" 
+     id="upDateS" 
      data-bs-backdrop="static" 
      data-bs-keyboard="false" 
      tabindex="-1" 
@@ -75,7 +75,7 @@
                         data-bs-dismiss="modal" 
                         aria-label="Close"></button>      
             </div>      
-            <form id="upDateForm" 
+            <form id="upDateFormS" 
                   action="subjects"
                   onsubmit="doPut(event, this)" 
                   class="modal-body">
@@ -102,9 +102,9 @@
             </form>    
             <div class="modal-footer">        
                 <button type="button" class="btn btn-secondary" 
-                        data-bs-dismiss="modal" id="CloseUp">Cerrar</button>        
+                        data-bs-dismiss="modal" id="CloseUpS">Cerrar</button>        
                 <button type="submit" class="btn btn-primary"
-                        form="upDateForm">Actualizar</button>      
+                        form="upDateFormS">Actualizar</button>      
             </div>    
         </div>  
     </div>
