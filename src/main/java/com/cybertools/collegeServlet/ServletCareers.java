@@ -10,7 +10,7 @@ import java.util.List;
 import jakarta.servlet.annotation.*;
 import jakarta.servlet.http.*;
 
-@WebServlet(name = "SubjectsServlet", urlPatterns = "/careers")
+@WebServlet(name = "CareersServlet", urlPatterns = "/careers")
 @MultipartConfig
  
 public class ServletCareers extends HttpServlet {

@@ -41,6 +41,7 @@
                     data-url="/college/teachers"
                     data-toggle="table"
                     data-filter-control="true"
+                    data-height = "500"
                     data-show-columns="true">
                     <thead>
                         <tr>
