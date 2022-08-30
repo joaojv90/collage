@@ -81,6 +81,34 @@ function doDeleteT(id) {
     document.getElementById('closeDelete').click();
 }
 
+function doDeleteC(id) {
+    fetch(`./careers?idCareers=${id}`, {
+        method: "DELETE"
+    }).then((response) => {
+        if (response.ok) {
+            alert("Registro Eliminada");
+            $("#table").bootstrapTable("refresh");
+        } else {
+            alert("registro no eliminada");
+        }
+    });
+    document.getElementById('closeDelete').click();
+}
+
+function doDeleteS(id) {
+    fetch(`./subjects?idSubjects=${id}`, {
+        method: "DELETE"
+    }).then((response) => {
+        if (response.ok) {
+            alert("Registro Eliminada");
+            $("#table").bootstrapTable("refresh");
+        } else {
+            alert("registro no eliminada");
+        }
+    });
+    document.getElementById('closeDelete').click();
+}
+
 function delButton(e) {
     idtoDel = e.parentElement.parentElement.querySelector("td").innerHTML;
 }
