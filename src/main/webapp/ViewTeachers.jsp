@@ -10,20 +10,7 @@
     </head>
     <body id="background">
         <div>
-            <nav class="navbar navbar-expand-sm bg-light" id="barraEncabezado">
-                <a class="navbar-brand" href="./Introduction.jsp">
-                    <img src="img/Logo.png" alt="Logo ITSQMET"
-                         style="width:120px;"/>
-                </a>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./ViewStudents.jsp">Estudiantes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./ViewTeachers.jsp">Profesores</a>
-                    </li>
-                </ul>
-            </nav>
+            <%@include file="./libs/Navs.html"%>
         </div>
         <div>
             <main>
