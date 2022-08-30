@@ -10,7 +10,7 @@ import java.util.List;
 import jakarta.servlet.annotation.*;
 import jakarta.servlet.http.*;
 
-@WebServlet(name = "SubjectsServlet", urlPatterns = "/subjects")
+@WebServlet("/subjects")
 @MultipartConfig
  
 public class ServletSubjects extends HttpServlet{
@@ -19,6 +19,7 @@ public class ServletSubjects extends HttpServlet{
     private static final DAO<ModelSubjects> dao = new ControllerSubjects();
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        System.out.println("test");
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
         List<ModelSubjects> list = dao.read();
