@@ -25,16 +25,16 @@
                     <input type="text" class="form-control"
                            name="nui"
                            id="insertNui"
-                           placeholder="Ingrese el NUI"
-                           height="300"
-                    />
+                           placeholder="Ingrese el NUI"/>
                     <label for="insertNui">Ingrese el NUI</label>
                 </div>
             </form>
         </div>
         <div class="col-2">
             <button class="button" form="correoEst">
-                <span class="button-content">Validar
+                <span class="button-content" 
+                      style="color: white">
+                    Validar
                 </span>
             </button>
         </div>

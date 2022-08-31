@@ -17,7 +17,7 @@
                 <br>
                 <br>
                 <header>
-                    <h1 align="center" style="font-family: Roboto; color: #141c27">
+                    <h1 align="center">
                         Control para Estudiantes</h1>
                 </header>
                 <br>
@@ -27,7 +27,7 @@
                         <button class="button"
                                 data-bs-toggle="modal" 
                                 data-bs-target="#insertStudents">
-                            <span class="button-content">Insertar nuevo
+                            <span class="button-content" style="color: white">Insertar nuevo
                             Estudiante </span>
                         </button>
                     </section>
