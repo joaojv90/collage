@@ -3,7 +3,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <%@include file="./libs/Bootstrap.html" %>
+    <%@include file="./libs/DialogMessages.html"%>
     <link href="Styles/Styles.css" rel="stylesheet" type="text/css"/>
     <script src="js/procedures.js"></script>
     <title>Procedimientos Almacenados</title>
@@ -16,7 +18,7 @@
 <br>
 <br>
 <div class="container text-center">
-    <h1 class="mb-4">Validar tipo de cuenta de correo</h1>
+    <h1 class="mb-4 animate__animated animate__bounce">Validar tipo de cuenta de correo</h1>
     <div class="row justify-content-center">
         <div class="col-4">
             <form action="procedures/correoEst" id="correoEst" onsubmit="callProcedure(event, this)">

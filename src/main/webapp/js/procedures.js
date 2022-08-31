@@ -4,9 +4,10 @@ function callProcedure(event, form){
         body: new FormData(form)
     }).then((response) => {
         if (response.ok) {
+            successToast();
             return response.text()
         } else {
-            alert("No se ejecutó el procedure");
+            errorToast();
         }
     }).then((data)=>writeResponse(data))
     event.preventDefault();
@@ -14,5 +15,21 @@ function callProcedure(event, form){
 
 function writeResponse(response){
     let result = document.getElementById("response")
-    result.innerHTML = response
+    if (response!=undefined){
+        result.innerHTML = response
+    }else{
+        result.innerHTML = "Cédula no registrada"
+    }
+}
+
+const successToast = () => {
+    let toastLiveExample = document.getElementById("successToast")
+    new bootstrap.Toast(toastLiveExample).show()
+    writeResponse()
+}
+
+const errorToast = () => {
+    let toastLiveExample = document.getElementById("errorToast")
+    let toast = new bootstrap.Toast(toastLiveExample)
+    toast.show()
 }
