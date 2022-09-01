@@ -48,11 +48,9 @@ function doPost(event, form) {
         body: new FormData(form)
     }).then((response) => {
         if (response.ok) {
-            alert("Ingreso exitoso");
-            $("#table").bootstrapTable("refresh");
-            $("#tableS").bootstrapTable("refresh");
+            successToast();
         } else {
-            alert("No se realizó ningún ingreso");
+            errorToast();
         }
     });
     event.preventDefault();
@@ -66,11 +64,9 @@ function doPut(event, form) {
         body: new FormData(form)
     }).then((response) => {
         if (response.ok) {
-            alert("Registro actualizado");
-            $("#table").bootstrapTable("refresh");
-            $("#tableS").bootstrapTable("refresh");
+            successToast();
         } else {
-            alert("No se actualizó ninguna registro");
+            errorToast();
         }
     });
     event.preventDefault();
@@ -83,8 +79,7 @@ function doDelete(id) {
         method: "DELETE"
     }).then((response) => {
         if (response.ok) {
-            alert("Registro Eliminada");
-            $("#table").bootstrapTable("refresh");
+            successToast();
         } else {
             alert("registro no eliminada");
         }
@@ -97,8 +92,7 @@ function doDeleteT(id) {
         method: "DELETE"
     }).then((response) => {
         if (response.ok) {
-            alert("Registro Eliminada");
-            $("#table").bootstrapTable("refresh");
+            successToast();
         } else {
             alert("registro no eliminada");
         }
@@ -111,10 +105,9 @@ function doDeleteC(id) {
         method: "DELETE"
     }).then((response) => {
         if (response.ok) {
-            alert("Registro Eliminada");
-            $("#table").bootstrapTable("refresh");
+            successToast();
         } else {
-            alert("registro no eliminada");
+            errorToast();
         }
     });
     document.getElementById('closeDelete').click();
@@ -125,10 +118,9 @@ function doDeleteS(id) {
         method: "DELETE"
     }).then((response) => {
         if (response.ok) {
-            alert("Registro Eliminada");
-            $("#tableS").bootstrapTable("refresh");
+            successToast();
         } else {
-            alert("registro no eliminada");
+            errorToast();
         }
     });
     document.getElementById('closeDeleteS').click();
@@ -158,18 +150,25 @@ const getUpdateDataS = (e) => {
   }  
 }
 
-function doPut(event, form) {
-    fetch(form.action, {
-        method: "PUT",
-        body: new FormData(form)
-    }).then((response) => {
-        if (response.ok) {
-            alert("Registro actualizado");
-            $("#table").bootstrapTable("refresh");
-        } else {
-            alert("No se actualizó ningún registro");
-        }
-    });
-    event.preventDefault();
-    document.getElementById('CloseUp').click();
+const successToast = () => {
+    let toastLiveExample = document.getElementById("successToast")
+    new bootstrap.Toast(toastLiveExample).show()
+    $("#table").bootstrapTable("refresh")
+    $("#tableS").bootstrapTable("refresh")
+    $(".modal").modal("hide")
+    writeTables()
+}
+
+const errorToast = () => {
+    let toastLiveExample = document.getElementById("errorToast")
+    let toast = new bootstrap.Toast(toastLiveExample)
+    toast.show()
+}
+
+function detailFormatter(index, row) {
+    var html = []
+    $.each(row, function (key, value) {
+        html.push('<p><b>' + key + ':</b> ' + value + '</p>')
+    })
+    return html.join('')
 }

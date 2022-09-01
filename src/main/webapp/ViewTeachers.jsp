@@ -4,7 +4,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Profesores</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <%@include file="./libs/Bootstrap.html"%>
+        <%@include file="./libs/DialogMessages.html" %>
         <link href="Styles/Styles.css" rel="stylesheet" type="text/css"/>
         <script src="js/Methods.js"></script>
     </head>
@@ -17,7 +19,7 @@
                 <br>
                 <br>
                 <header>
-                    <h1 align="center" style="font-family: Roboto; color: #141c27">
+                    <h1 align="center" style="font-family: Roboto; color: #141c27" class="animate__animated animate__bounce">
                         Control para Docentes</h1>
                 </header>
                 <br>
@@ -42,7 +44,9 @@
                     data-toggle="table"
                     data-filter-control="true"
                     data-height = "500"
-                    data-show-columns="true">
+                    data-show-columns="true"
+                    data-search="true"
+                    data-show-export="true">
                     <thead>
                         <tr>
                             <th data-field="nui"><center>NUI</center></th>
