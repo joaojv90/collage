@@ -1,35 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Estudiantes</title>
-        <%@include file="./libs/Bootstrap.html"%>
-        <link href="Styles/Styles.css" rel="stylesheet" type="text/css"/>
-        <script src="js/Methods.js"></script>
-    </head>
-    <body id="background">
-        <div>
-            <%@include file="./libs/Navs.html"%>
-        </div>
-        <div>
-            <main>
-                <br>
-                <br>
-                <header>
-                    <h1 align="center">
-                        Control para Estudiantes</h1>
-                </header>
-                <br>
-                <br>
-                <center>
-                    <section>
-                        <button class="button"
-                                data-bs-toggle="modal" 
-                                data-bs-target="#insertStudents">
-                            <span class="button-content" style="color: white">Insertar nuevo
-=======
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Estudiantes</title>
@@ -59,7 +30,6 @@
                         data-bs-toggle="modal"
                         data-bs-target="#insertStudents">
                             <span class="button-content">Insertar nuevo
->>>>>>> test
                             Estudiante </span>
                 </button>
             </section>
