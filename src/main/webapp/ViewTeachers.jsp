@@ -46,9 +46,6 @@
                     data-height = "500"
                     data-show-columns="true"
                     data-search="true"
-                    data-detail-view="true"
-                    data-detail-formatter="detailFormatter"
-                    data-toolbar="#toolbar"
                     data-show-export="true">
                     <thead>
                         <tr>
