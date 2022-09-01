@@ -66,7 +66,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <h1 id="title">Obejtivos Específicos</h1>
+                                    <h1 id="title">Objetivos Específicos</h1>
                                     <p align="justify" style="color: #141c27"><b>
                                         • Describir las características y funciones que nos
                                         brindan los programas usados en la práctica.<br>
