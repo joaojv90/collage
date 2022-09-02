@@ -4,7 +4,10 @@
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    font-family: Roboto;
+    font-family: Roboto,'Open Sans';
+    position: relative;
+    padding-bottom: 3em;
+    min-height: 100vh;
 }
 
 footer {
