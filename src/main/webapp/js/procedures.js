@@ -15,7 +15,7 @@ function callProcedure(event, form){
 
 function writeResponse(response){
     let result = document.getElementById("response")
-    if (response!=undefined){
+    if (response!==undefined){
         result.innerHTML = response
     }else{
         result.innerHTML = "Cédula no registrada"
