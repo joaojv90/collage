@@ -8,7 +8,10 @@
 </head>
 <body id="background">
 <header>
-    <h1 class="text-center" style="padding: 6rem 0">Bienvenido a COLLEGE</h1>
+    <h1 class="text-center" style="padding: 6rem 0">
+        <img src="img/Logo_dark.png" alt="logo ITSQMET" style="width:300px; height:150px"/>
+        <br>
+        Bienvenido a COLLEGE</h1>
 </header>
 <div class="container-fluid">
     <section class="w-100 p-4 d-flex justify-content-center pb-4">
