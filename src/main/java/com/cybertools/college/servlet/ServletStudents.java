@@ -13,11 +13,13 @@ import jakarta.servlet.http.*;
 @MultipartConfig
 
 public class ServletStudents extends HttpServlet{
+	
+	private String format = "[\\[\\]]";
     
     private static final Gson objGson = new GsonBuilder().serializeNulls().create();
     private static final DAO<ModelStudents> dao = new ControllerStudents();
     
-    //Obtiene datos del servidor
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
@@ -26,10 +28,10 @@ public class ServletStudents extends HttpServlet{
         out.write(data);
     }
     
-    //Crea datos en el server
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String formData = objGson.toJson(request.getParameterMap()); //optiene todos los datos de una sola vez
-        formData = formData.replaceAll("[\\[\\]]", ""); //remplaza simbolos de request
+        formData = formData.replaceAll(format, ""); //remplaza simbolos de request
         ModelStudents mSt = objGson.fromJson(formData, ModelStudents.class);//se convierte al objeto para eso se usa el .class
         boolean create = dao.create(mSt);
         if(create){
@@ -39,10 +41,10 @@ public class ServletStudents extends HttpServlet{
         }
     }
     
-    //Actualiza datos del server
+    @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String formData = objGson.toJson(request.getParameterMap());
-        formData = formData.replaceAll("[\\[\\]]", "");
+        formData = formData.replaceAll(format, "");
         ModelStudents mSt = objGson.fromJson(formData, ModelStudents.class);
         boolean update = dao.update(mSt);
         if(update){
@@ -52,9 +54,10 @@ public class ServletStudents extends HttpServlet{
         }
     }
     
+    @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String formData = objGson.toJson(request.getParameterMap());
-        formData = formData.replaceAll("[\\[\\]]", "");
+        formData = formData.replaceAll(format, "");
         ModelStudents mSt = objGson.fromJson(formData, ModelStudents.class);
         boolean del = dao.delete(mSt);
         if(del){

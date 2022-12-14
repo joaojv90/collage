@@ -12,13 +12,16 @@ import java.io.IOException;
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 @MultipartConfig
 public class ServletLogin extends HttpServlet {
+	
+	private String format = "[\\[\\]]";
 
     private static final Gson objGson = new GsonBuilder().serializeNulls().create();
     private static final DAOLogin<ModelUsers> dao = new ControllerLogin();
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String formData = objGson.toJson(request.getParameterMap());
-        formData = formData.replaceAll("[\\[\\]]", "");
+        formData = formData.replaceAll(format, "");
         ModelUsers mu = objGson.fromJson(formData, ModelUsers.class);
         boolean login = dao.login(mu);
         if(login){
@@ -31,9 +34,10 @@ public class ServletLogin extends HttpServlet {
 
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String formData = objGson.toJson(request.getParameterMap());
-        formData = formData.replaceAll("[\\[\\]]", "");
+        formData = formData.replaceAll(format, "");
         ModelUsers mu = objGson.fromJson(formData, ModelUsers.class);
         boolean register = dao.register(mu);
         if(register){

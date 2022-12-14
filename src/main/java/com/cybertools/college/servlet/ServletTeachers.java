@@ -12,10 +12,13 @@ import jakarta.servlet.http.*;
 @MultipartConfig
  
 public class ServletTeachers extends HttpServlet{
+	
+	private String format = "[\\[\\]]";
     
     private static final Gson objGson = new GsonBuilder().serializeNulls().create();
     private static final DAO<ModelTeachers> dao = new ControllerTeachers();
     
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
@@ -24,9 +27,10 @@ public class ServletTeachers extends HttpServlet{
         out.write(data);
     }
     
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String formData = objGson.toJson(request.getParameterMap()); 
-        formData = formData.replaceAll("[\\[\\]]", ""); 
+        formData = formData.replaceAll(format, ""); 
         ModelTeachers mt = objGson.fromJson(formData, ModelTeachers.class);
         boolean create = dao.create(mt);
         if(create){
@@ -36,9 +40,10 @@ public class ServletTeachers extends HttpServlet{
         }
     }
     
+    @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String formData = objGson.toJson(request.getParameterMap());
-        formData = formData.replaceAll("[\\[\\]]", "");
+        formData = formData.replaceAll(format, "");
         ModelTeachers mt = objGson.fromJson(formData, ModelTeachers.class);
         boolean update = dao.update(mt);
         if(update){
@@ -48,9 +53,10 @@ public class ServletTeachers extends HttpServlet{
         }
     }
     
+    @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String formData = objGson.toJson(request.getParameterMap());
-        formData = formData.replaceAll("[\\[\\]]", "");
+        formData = formData.replaceAll(format, "");
         ModelTeachers mt = objGson.fromJson(formData, ModelTeachers.class);
         boolean del = dao.delete(mt);
         if(del){

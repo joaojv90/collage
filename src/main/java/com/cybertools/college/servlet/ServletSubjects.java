@@ -12,12 +12,14 @@ import jakarta.servlet.http.*;
 @MultipartConfig
  
 public class ServletSubjects extends HttpServlet{
+	
+	private String format = "[\\[\\]]";
     
     private static final Gson objGson = new GsonBuilder().serializeNulls().create();
     private static final DAO<ModelSubjects> dao = new ControllerSubjects();
     
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        System.out.println("test");
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
         List<ModelSubjects> list = dao.read();
@@ -25,10 +27,11 @@ public class ServletSubjects extends HttpServlet{
         out.write(data);
     }
     
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String formData = objGson.toJson(request.getParameterMap()); //optiene todos los datos de una sola vez
-        formData = formData.replaceAll("[\\[\\]]", ""); //remplaza simbolos de request
-        ModelSubjects mSt = objGson.fromJson(formData, ModelSubjects.class);//se convierte al objeto para eso se usa el .class
+        String formData = objGson.toJson(request.getParameterMap());
+        formData = formData.replaceAll(format, "");
+        ModelSubjects mSt = objGson.fromJson(formData, ModelSubjects.class);
         boolean create = dao.create(mSt);
         if(create){
             response.setStatus(HttpServletResponse.SC_OK);
@@ -37,9 +40,10 @@ public class ServletSubjects extends HttpServlet{
         }
     }
     
+    @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String formData = objGson.toJson(request.getParameterMap());
-        formData = formData.replaceAll("[\\[\\]]", "");
+        formData = formData.replaceAll(format, "");
         ModelSubjects mSt = objGson.fromJson(formData, ModelSubjects.class);
         boolean update = dao.update(mSt);
         if(update){
@@ -49,9 +53,10 @@ public class ServletSubjects extends HttpServlet{
         }
     }
     
+    @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String formData = objGson.toJson(request.getParameterMap());
-        formData = formData.replaceAll("[\\[\\]]", "");
+        formData = formData.replaceAll(format, "");
         ModelSubjects mSt = objGson.fromJson(formData, ModelSubjects.class);
         boolean del = dao.delete(mSt);
         if(del){
