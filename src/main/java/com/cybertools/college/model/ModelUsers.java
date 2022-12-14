@@ -1,8 +1,9 @@
-package com.cybertools.collegeModel;
+package com.cybertools.college.model;
 
 public class ModelUsers {
 
-    private String mail, pass;
+    private String mail;
+    private String pass;
 
     public String getMail() {
         return mail;

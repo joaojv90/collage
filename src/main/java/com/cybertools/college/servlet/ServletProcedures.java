@@ -1,8 +1,8 @@
-package com.cybertools.collegeServlet;
+package com.cybertools.college.servlet;
 
-import com.cybertools.collegeController.ControllerProcedures;
-import com.cybertools.collegeController.DAOProcedures;
-import com.cybertools.collegeModel.ModelStudents;
+import com.cybertools.college.controller.ControllerProcedures;
+import com.cybertools.college.controller.DAOProcedures;
+import com.cybertools.college.model.ModelStudents;
 import com.google.gson.*;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;

@@ -1,37 +1,34 @@
-package com.cybertools.collegeServlet;
+package com.cybertools.college.servlet;
 
-//@author jpjar
-
-import com.cybertools.collegeController.*;
-import com.cybertools.collegeModel.ModelSubjects;
+import com.cybertools.college.controller.*;
+import com.cybertools.college.model.ModelCareers;
 import com.google.gson.*;
 import java.io.*;
 import java.util.List;
 import jakarta.servlet.annotation.*;
 import jakarta.servlet.http.*;
 
-@WebServlet("/subjects")
+@WebServlet(name = "CareersServlet", urlPatterns = "/careers")
 @MultipartConfig
  
-public class ServletSubjects extends HttpServlet{
+public class ServletCareers extends HttpServlet {
     
     private static final Gson objGson = new GsonBuilder().serializeNulls().create();
-    private static final DAO<ModelSubjects> dao = new ControllerSubjects();
+    private static final DAO<ModelCareers> dao = new ControllerCareers();
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        System.out.println("test");
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
-        List<ModelSubjects> list = dao.read();
+        List<ModelCareers> list = dao.read();
         String data = objGson.toJson(list);        
         out.write(data);
     }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String formData = objGson.toJson(request.getParameterMap()); //optiene todos los datos de una sola vez
-        formData = formData.replaceAll("[\\[\\]]", ""); //remplaza simbolos de request
-        ModelSubjects mSt = objGson.fromJson(formData, ModelSubjects.class);//se convierte al objeto para eso se usa el .class
-        boolean create = dao.create(mSt);
+        String formData = objGson.toJson(request.getParameterMap()); 
+        formData = formData.replaceAll("[\\[\\]]", ""); 
+        ModelCareers mc = objGson.fromJson(formData, ModelCareers.class);
+        boolean create = dao.create(mc);
         if(create){
             response.setStatus(HttpServletResponse.SC_OK);
         }else{
@@ -42,8 +39,8 @@ public class ServletSubjects extends HttpServlet{
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String formData = objGson.toJson(request.getParameterMap());
         formData = formData.replaceAll("[\\[\\]]", "");
-        ModelSubjects mSt = objGson.fromJson(formData, ModelSubjects.class);
-        boolean update = dao.update(mSt);
+        ModelCareers mc = objGson.fromJson(formData, ModelCareers.class);
+        boolean update = dao.update(mc);
         if(update){
             response.setStatus(HttpServletResponse.SC_OK);
         }else{
@@ -54,8 +51,8 @@ public class ServletSubjects extends HttpServlet{
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String formData = objGson.toJson(request.getParameterMap());
         formData = formData.replaceAll("[\\[\\]]", "");
-        ModelSubjects mSt = objGson.fromJson(formData, ModelSubjects.class);
-        boolean del = dao.delete(mSt);
+        ModelCareers mc = objGson.fromJson(formData, ModelCareers.class);
+        boolean del = dao.delete(mc);
         if(del){
             response.setStatus(HttpServletResponse.SC_OK);
         }else{

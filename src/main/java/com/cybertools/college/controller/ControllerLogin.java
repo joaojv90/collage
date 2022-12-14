@@ -1,7 +1,7 @@
-package com.cybertools.collegeController;
+package com.cybertools.college.controller;
 
-import com.cybertools.collegeModel.ModelUsers;
-import com.cybertools.collegeCBDD.CBDD;
+import com.cybertools.college.cbdd.CBDD;
+import com.cybertools.college.model.ModelUsers;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

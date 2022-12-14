@@ -1,9 +1,8 @@
-package com.cybertools.collegeController;
+package com.cybertools.college.controller;
 
-//@author jpjar
+import com.cybertools.college.cbdd.CBDD;
+import com.cybertools.college.model.ModelCareers;
 
-import com.cybertools.collegeCBDD.CBDD;
-import com.cybertools.collegeModel.ModelCareers;
 import java.sql.*;
 import java.util.*;
  
@@ -24,7 +23,7 @@ public class ControllerCareers implements DAO<ModelCareers>{
                 listSubjects.add(ms);
             }
         } catch (Exception ex) {
-            ex.printStackTrace(System.out);
+            ex.printStackTrace();
         }
         return listSubjects;
     }
@@ -35,9 +34,9 @@ public class ControllerCareers implements DAO<ModelCareers>{
             String query = "INSERT INTO careers (nameCareer) VALUES (?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, t.getNameCareer());
-            return ps.executeUpdate() != 0; //si no se ejecuta
+            return ps.executeUpdate() != 0;
         } catch (Exception ex) {
-            ex.printStackTrace(System.out);
+            ex.printStackTrace();
         }
         return false;
     }
@@ -51,7 +50,7 @@ public class ControllerCareers implements DAO<ModelCareers>{
             ps.setString(1, t.getNameCareer());
             return ps.executeUpdate() != 0;
         } catch (Exception ex) {
-            ex.printStackTrace(System.out);
+            ex.printStackTrace();
         }
         return false;
     }
@@ -64,7 +63,7 @@ public class ControllerCareers implements DAO<ModelCareers>{
             ps.setInt(1, t.getIdCareers());
             return ps.executeUpdate() != 0;
         }catch (Exception ex) {
-            ex.printStackTrace(System.out);
+            ex.printStackTrace();
         }   
         return false;
     }

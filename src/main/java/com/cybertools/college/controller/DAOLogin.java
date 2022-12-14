@@ -1,4 +1,4 @@
-package com.cybertools.collegeController;
+package com.cybertools.college.controller;
 
 public interface DAOLogin <T> {
 

@@ -1,9 +1,8 @@
-package com.cybertools.collegeController;
+package com.cybertools.college.controller;
 
-//@author jpjar
+import com.cybertools.college.cbdd.CBDD;
+import com.cybertools.college.model.ModelStudents;
 
-import com.cybertools.collegeCBDD.CBDD;
-import com.cybertools.collegeModel.ModelStudents;
 import java.sql.*;
 import java.util.*;
  

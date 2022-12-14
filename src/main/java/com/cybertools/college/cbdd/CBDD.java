@@ -1,12 +1,16 @@
-package com.cybertools.collegeCBDD;
+package com.cybertools.college.cbdd;
 
 //@author jpjar
 
 import java.sql.*;
- 
+
 public class CBDD {
-    
+	
     private static Connection conn;
+    
+    private CBDD() {
+    	
+    }
     
     static {
         String url = "jdbc:mysql://localhost/college?useSSL=false";
@@ -16,7 +20,7 @@ public class CBDD {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(url, user, password);
         } catch (Exception ex) {
-            ex.printStackTrace(System.out);
+            ex.printStackTrace();
         }
     }
     

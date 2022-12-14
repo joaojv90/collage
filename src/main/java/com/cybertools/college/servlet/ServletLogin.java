@@ -1,8 +1,8 @@
-package com.cybertools.collegeServlet;
+package com.cybertools.college.servlet;
 
-import com.cybertools.collegeController.ControllerLogin;
-import com.cybertools.collegeController.DAOLogin;
-import com.cybertools.collegeModel.ModelUsers;
+import com.cybertools.college.controller.ControllerLogin;
+import com.cybertools.college.controller.DAOLogin;
+import com.cybertools.college.model.ModelUsers;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import jakarta.servlet.annotation.*;

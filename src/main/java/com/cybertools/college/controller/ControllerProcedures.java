@@ -1,7 +1,8 @@
-package com.cybertools.collegeController;
+package com.cybertools.college.controller;
 
-import com.cybertools.collegeCBDD.CBDD;
-import com.cybertools.collegeModel.ModelStudents;
+import com.cybertools.college.cbdd.CBDD;
+import com.cybertools.college.model.ModelStudents;
+
 import java.sql.*;
 
 public class ControllerProcedures implements DAOProcedures<ModelStudents>{

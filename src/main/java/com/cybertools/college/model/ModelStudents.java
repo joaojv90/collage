@@ -1,10 +1,15 @@
-package com.cybertools.collegeModel;
+package com.cybertools.college.model;
 
 //@author jpjar
  
-public class ModelTeachers {
+public class ModelStudents {
     
-    private String nui, firstName, lastName, mailAddress;
+    private String nui;
+    private String firstName;
+    private String lastName;
+    private String address;
+    private String mailAddress;
+    private String phone;
 
     public String getNui() {
         return nui;
@@ -30,6 +35,14 @@ public class ModelTeachers {
         this.lastName = lastName;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getMailAddress() {
         return mailAddress;
     }
@@ -37,7 +50,13 @@ public class ModelTeachers {
     public void setMailAddress(String mailAddress) {
         this.mailAddress = mailAddress;
     }
-    
-    
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
 }

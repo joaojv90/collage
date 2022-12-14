@@ -1,4 +1,4 @@
-package com.cybertools.collegeModel;
+package com.cybertools.college.model;
 
 //@author jpjar
  

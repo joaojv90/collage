@@ -1,9 +1,7 @@
-package com.cybertools.collegeServlet;
+package com.cybertools.college.servlet;
 
-//@author jpjar
-
-import com.cybertools.collegeController.*;
-import com.cybertools.collegeModel.ModelTeachers;
+import com.cybertools.college.controller.*;
+import com.cybertools.college.model.ModelTeachers;
 import com.google.gson.*;
 import java.io.*;
 import java.util.List;

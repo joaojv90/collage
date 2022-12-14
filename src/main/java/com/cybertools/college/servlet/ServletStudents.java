@@ -1,36 +1,37 @@
-package com.cybertools.collegeServlet;
+package com.cybertools.college.servlet;
 
-//@author jpjar
-
-import com.cybertools.collegeController.*;
-import com.cybertools.collegeModel.ModelCareers;
+import com.cybertools.college.controller.*;
+import com.cybertools.college.model.ModelStudents;
 import com.google.gson.*;
 import java.io.*;
 import java.util.List;
 import jakarta.servlet.annotation.*;
 import jakarta.servlet.http.*;
 
-@WebServlet(name = "CareersServlet", urlPatterns = "/careers")
+
+@WebServlet(name = "StudentsServlet", urlPatterns = "/students")
 @MultipartConfig
- 
-public class ServletCareers extends HttpServlet {
+
+public class ServletStudents extends HttpServlet{
     
     private static final Gson objGson = new GsonBuilder().serializeNulls().create();
-    private static final DAO<ModelCareers> dao = new ControllerCareers();
+    private static final DAO<ModelStudents> dao = new ControllerStudents();
     
+    //Obtiene datos del servidor
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
-        List<ModelCareers> list = dao.read();
+        List<ModelStudents> list = dao.read();
         String data = objGson.toJson(list);        
         out.write(data);
     }
     
+    //Crea datos en el server
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String formData = objGson.toJson(request.getParameterMap()); 
-        formData = formData.replaceAll("[\\[\\]]", ""); 
-        ModelCareers mc = objGson.fromJson(formData, ModelCareers.class);
-        boolean create = dao.create(mc);
+        String formData = objGson.toJson(request.getParameterMap()); //optiene todos los datos de una sola vez
+        formData = formData.replaceAll("[\\[\\]]", ""); //remplaza simbolos de request
+        ModelStudents mSt = objGson.fromJson(formData, ModelStudents.class);//se convierte al objeto para eso se usa el .class
+        boolean create = dao.create(mSt);
         if(create){
             response.setStatus(HttpServletResponse.SC_OK);
         }else{
@@ -38,11 +39,12 @@ public class ServletCareers extends HttpServlet {
         }
     }
     
+    //Actualiza datos del server
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String formData = objGson.toJson(request.getParameterMap());
         formData = formData.replaceAll("[\\[\\]]", "");
-        ModelCareers mc = objGson.fromJson(formData, ModelCareers.class);
-        boolean update = dao.update(mc);
+        ModelStudents mSt = objGson.fromJson(formData, ModelStudents.class);
+        boolean update = dao.update(mSt);
         if(update){
             response.setStatus(HttpServletResponse.SC_OK);
         }else{
@@ -53,8 +55,8 @@ public class ServletCareers extends HttpServlet {
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String formData = objGson.toJson(request.getParameterMap());
         formData = formData.replaceAll("[\\[\\]]", "");
-        ModelCareers mc = objGson.fromJson(formData, ModelCareers.class);
-        boolean del = dao.delete(mc);
+        ModelStudents mSt = objGson.fromJson(formData, ModelStudents.class);
+        boolean del = dao.delete(mSt);
         if(del){
             response.setStatus(HttpServletResponse.SC_OK);
         }else{
