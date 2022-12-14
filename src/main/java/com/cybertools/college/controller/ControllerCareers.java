@@ -7,6 +7,9 @@ import java.sql.*;
 import java.util.*;
  
 public class ControllerCareers implements DAO<ModelCareers>{
+	
+	Statement st = null; 
+	PreparedStatement ps = null;
     
     static Connection conn = CBDD.getConnection();
     
@@ -15,7 +18,8 @@ public class ControllerCareers implements DAO<ModelCareers>{
         List<ModelCareers> listSubjects = new ArrayList<>();
         try {
             String query = "SELECT * FROM careers";
-            ResultSet rs = conn.createStatement().executeQuery(query);
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
             while (rs.next()) {
                 ModelCareers ms = new ModelCareers();
                 ms.setIdCareers(rs.getInt(1));
@@ -32,7 +36,7 @@ public class ControllerCareers implements DAO<ModelCareers>{
     public boolean create(ModelCareers t) {
         try {
             String query = "INSERT INTO careers (nameCareer) VALUES (?)";
-            PreparedStatement ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement(query);
             ps.setString(1, t.getNameCareer());
             return ps.executeUpdate() != 0;
         } catch (Exception ex) {
@@ -45,7 +49,7 @@ public class ControllerCareers implements DAO<ModelCareers>{
     public boolean update(ModelCareers t) {
         try {
             String query = "UPDATE careers SET nameCareer=? WHERE idCareers=?";
-            PreparedStatement ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement(query);
             ps.setInt(2, t.getIdCareers());
             ps.setString(1, t.getNameCareer());
             return ps.executeUpdate() != 0;
@@ -59,7 +63,7 @@ public class ControllerCareers implements DAO<ModelCareers>{
     public boolean delete(ModelCareers t) {
         try {
             String query = "DELETE FROM careers WHERE idCareers=?";
-            PreparedStatement ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement(query);
             ps.setInt(1, t.getIdCareers());
             return ps.executeUpdate() != 0;
         }catch (Exception ex) {

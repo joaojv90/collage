@@ -5,8 +5,15 @@ import com.cybertools.college.model.ModelStudents;
 
 import java.sql.*;
 import java.util.*;
+
+import org.apache.log4j.Logger;
  
 public class ControllerStudents implements DAO <ModelStudents>{
+	
+	Statement st = null; 
+	PreparedStatement ps = null;
+	
+	private static Logger log = Logger.getLogger(ControllerStudents.class);
     
     static Connection conn = CBDD.getConnection();
 
@@ -15,7 +22,8 @@ public class ControllerStudents implements DAO <ModelStudents>{
         List<ModelStudents> listStudents = new ArrayList<>();
         try {
             String query = "SELECT * FROM students";
-            ResultSet rs = conn.createStatement().executeQuery(query);
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
             while (rs.next()){
                ModelStudents ms = new ModelStudents();
                ms.setNui(rs.getString(1));
@@ -27,7 +35,7 @@ public class ControllerStudents implements DAO <ModelStudents>{
                listStudents.add(ms);
             }
         }catch (Exception ex) {
-            ex.printStackTrace(System.out);
+            ex.printStackTrace();
         }
         return listStudents;
     }
@@ -36,25 +44,25 @@ public class ControllerStudents implements DAO <ModelStudents>{
     public boolean create(ModelStudents t) {        
         try {
             String query = "INSERT INTO students (nui, firstName, lastName, address, mailAddress, phone) VALUES (?,?,?,?,?,?)";
-            PreparedStatement ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement(query);
             ps.setString(1, t.getNui());
             ps.setString(2, t.getFirstName());
             ps.setString(3, t.getLastName());
             ps.setString(4, t.getAddress());
             ps.setString(5, t.getMailAddress());
             ps.setString(6, t.getPhone());
-            return ps.executeUpdate() != 0; //si no se ejecuta
+            return ps.executeUpdate() != 0; 
         }catch (Exception ex) {
-            ex.printStackTrace(System.out);
+            ex.printStackTrace();
         }   
-        return false; //retorna el falso
+        return false; 
     }
 
     @Override
     public boolean update(ModelStudents t) {       
         try {
             String query = "UPDATE students SET firstName=?, lastName=?, address=?, mailAddress=?, phone=? WHERE nui=?";
-            PreparedStatement ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement(query);
             ps.setString(6, t.getNui());
             ps.setString(1, t.getFirstName());
             ps.setString(2, t.getLastName());
@@ -63,7 +71,7 @@ public class ControllerStudents implements DAO <ModelStudents>{
             ps.setString(5, t.getPhone());
             return ps.executeUpdate() != 0;
         }catch (Exception ex) {
-            ex.printStackTrace(System.out);
+            ex.printStackTrace();
         }
         return false;
     }
@@ -72,13 +80,13 @@ public class ControllerStudents implements DAO <ModelStudents>{
     public boolean delete(ModelStudents t) {    
         try {
             String query = "DELETE FROM students WHERE nui=?";
-            PreparedStatement ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement(query);
             ps.setString(1, t.getNui());
-            System.out.println(t);
-            System.out.println(ps.toString());
+            log.info(t);
+            log.info(ps.toString());
             return ps.executeUpdate() != 0;
         }catch (Exception ex) {
-            ex.printStackTrace(System.out);
+            ex.printStackTrace();
         }   
         return false;
     }
